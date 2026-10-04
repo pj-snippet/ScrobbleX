@@ -1,0 +1,8 @@
+{
+  "name": "ScrobbleX",
+  "description": "Your music. Your history. Your patterns. Personal Last.fm music analytics and listening intelligence mobile application.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
