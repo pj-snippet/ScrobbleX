@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">ScrobbleX</string>
+    <string name="title_activity_main">ScrobbleX</string>
+    <string name="package_name">com.scrobblex.app</string>
+    <string name="custom_url_scheme">com.scrobblex.app</string>
+</resources>
