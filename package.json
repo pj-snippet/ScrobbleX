@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
     "build": "vite build",
-    "start": "vite preview --port=3000 --host=0.0.0.0",
     "preview": "vite preview --port=3000 --host=0.0.0.0",
+    "android:sync": "npm run build && npx cap sync android",
     "clean": "rm -rf dist server.js",
     "lint": "tsc --noEmit"
   },
@@ -16,8 +16,6 @@
     "@capacitor/core": "^8.5.2",
     "@tailwindcss/vite": "^4.0.0",
     "@vitejs/plugin-react": "^4.3.4",
-    "dotenv": "^16.4.7",
-    "express": "^4.21.2",
     "lucide-react": "^0.475.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -26,11 +24,9 @@
   },
   "devDependencies": {
     "@capacitor/cli": "^8.5.2",
-    "@types/express": "^4.17.21",
     "@types/node": "^22.13.1",
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
-    "tsx": "^4.19.2",
     "typescript": "^5.7.3"
   }
 }

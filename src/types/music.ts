@@ -54,7 +54,7 @@ export interface Track {
   albumId: string;
   albumTitle: string;
   artworkUrl: string;
-  durationSec: number;
+  durationSec: number | null;
   loved: boolean;
   lovedAt?: number;
 }
@@ -64,6 +64,13 @@ export interface Scrobble {
   trackId: string;
   artistId: string;
   albumId: string;
+  trackName?: string;
+  artistName?: string;
+  albumName?: string | null;
+  trackMbid?: string | null;
+  artistMbid?: string | null;
+  albumMbid?: string | null;
+  artworkUrl?: string | null;
   timestamp: number;
   timestampUTC: string;
   dateKey: string;
@@ -71,7 +78,7 @@ export interface Scrobble {
   month: number;
   dayOfWeek: number;
   hourOfDay: number;
-  durationSec: number;
+  durationSec: number | null;
   nowPlaying?: boolean;
   loved: boolean;
   source: 'lastfm-api' | 'incremental-sync' | 'historical-import';
@@ -99,6 +106,7 @@ export interface DailyActivitySummary {
   timestamp: number;
   plays: number;
   durationSec: number;
+  unknownDurationCount: number;
   uniqueArtists: number;
   uniqueAlbums: number;
   uniqueTracks: number;
@@ -117,6 +125,7 @@ export interface WeeklyHeatmapCell {
   label: string;
   plays: number;
   durationSec: number;
+  unknownDurationCount: number;
   uniqueTracks: number;
   intensity: number;
   topArtists: { id: string; name: string; plays: number }[];
@@ -137,7 +146,11 @@ export interface SessionAnalyticsSummary {
   inactivityThresholdMinutes: number;
   totalSessions: number;
   avgSessionDurationMin: number;
+  avgSessionDurationSec: number;
+  avgSessionUnknownDurationCount: number;
   longestSessionMin: number;
+  longestSessionDurationSec: number;
+  longestSessionUnknownDurationCount: number;
   longestSessionDate: string;
   longestSessionTracks: number;
   avgTracksPerSession: number;
